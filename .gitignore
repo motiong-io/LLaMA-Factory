@@ -177,3 +177,9 @@ wandb/
 swanlog/
 generated_predictions.jsonl
 predictions_score.json
+
+#Huggingface models
+.huggingface/
+model_after_training/
+
+trainer_output/
