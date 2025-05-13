@@ -1,4 +1,7 @@
 {
+  "motion_g_interview_dataset": {
+    "file_name": "motion_g_interview_dataset.json"
+  },
   "identity": {
     "file_name": "identity.json"
   },
