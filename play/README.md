@@ -110,10 +110,10 @@ FORCE_TORCHRUN=1 CUDA_VISIBLE_DEVICES=2 llamafactory-cli train \
     --template default \
     --flash_attn auto \
     --dataset_dir data \
-    --dataset motion_g_interview_dataset \
+    --dataset interview-qgen-alpaca-20250516-101021 \
     --cutoff_len 512 \
     --learning_rate 5e-05 \
-    --num_train_epochs 100 \
+    --num_train_epochs 30 \
     --max_samples 1000 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 4 \
@@ -124,7 +124,7 @@ FORCE_TORCHRUN=1 CUDA_VISIBLE_DEVICES=2 llamafactory-cli train \
     --warmup_steps 0 \
     --packing False \
     --report_to none \
-    --output_dir saves/Qwen2-0.5B/lora/train_2025-05-12-16-42-01 \
+    --output_dir saves/Qwen2-0.5B/lora/train_2025-05-18-16-01-01 \
     --fp16 True \
     --plot_loss True \
     --trust_remote_code True \
