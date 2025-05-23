@@ -1,0 +1,41 @@
+version: '3'
+# suppose your service needs postgres or minio
+# add or remove stuff based on your needs
+services:
+  app:
+    build: 
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ~/.ssh:/opt/motiong/.ssh
+      - ../.devcontainer/.zshrc:/opt/motiong/.zshrc
+      - ..:/opt/motiong/code
+    command: ["tail -f /dev/null"]
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    ports:
+      - "6565:6565"
+
+  # minio:
+  #   image: minio/minio
+  #   container_name: minio-container
+  #   command: server /data --console-address ":9001"
+  #   ports:
+  #     - "9000:9000"
+  #     - "9001:9001"
+  #   environment:
+  #     MINIO_ACCESS_KEY: minio
+  #     MINIO_SECRET_KEY: minio123
+  #   volumes:
+  #     - ~/minio-data:/data
+
+
+  # db:
+  #   image: postgres:14
+  #   # ports:
+  #   #   - "5432:5432"
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_DB=db
+
